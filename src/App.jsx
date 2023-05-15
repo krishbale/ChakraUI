@@ -1,4 +1,5 @@
 import Dashboard from "./Dashboard"
+import Navbar from "./Navbar"
 
 
 
@@ -7,7 +8,9 @@ function App() {
 
   return (
     <>
+    <Navbar />
     <Dashboard />
+    
      
     </>
   )
