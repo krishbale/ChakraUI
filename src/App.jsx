@@ -1,18 +1,34 @@
+
 import Dashboard from "./Dashboard"
-import Navbar from "./Navbar"
 
+import { 
+  createBrowserRouter, 
+  createRoutesFromElements, 
+  Route, 
+  RouterProvider 
+} from 'react-router-dom'
 
+import RootLayout from "./RootLayout"
+import Create from "./Create"
+import Profile from "./Profile"
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Dashboard /> } loader={taskloader}/>
+      <Route path="create" element={<Create />} />
+      <Route path="profile" element={<Profile />} />
+    </Route>
+  )
+)
 
 function App() {
+  
 
 
   return (
-    <>
-    <Navbar />
-    <Dashboard />
-    
-     
-    </>
+    <RouterProvider router={router} />
+   
   )
 }
 
